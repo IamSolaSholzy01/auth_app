@@ -13,7 +13,6 @@ form{
 
 @section('content')
 <section class="update">
-    <h1 class="success">{{ $message ?? '' }}</h1>
 <div class="card p-5">
     <form action="{{ route('profile') }}" method="POST">
     {{ csrf_field() }}

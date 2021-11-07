@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 
 class ProfileController extends Controller
 {
@@ -21,7 +20,7 @@ class ProfileController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('edit-profile')->with('user', $user)->with('message', 'started');
+        return view('edit-profile')->with('user', $user);
     }
 
     /**
@@ -42,15 +41,7 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->validate($request, [
-        //     'course' => 'required | min:3',
-        // ]);
-        // $course = new Course;
-        // $course->title = $request->input('course');
-        // $course->save();
-        // return redirect()->action('courseController@index')
-        //     ->with('success','Course Added')
-        //     ->with('course',Course::orderBy('course_id','DESC')->get());
+        //
     }
 
     /**
@@ -85,7 +76,6 @@ class ProfileController extends Controller
     public function update(Request $request)
     { 
         $user = User::find(Auth::id());
-        $message=Auth::id();
         $user->name = $request->name;
         $user->username = $request->username;
         $user->email = $request->email;
@@ -94,7 +84,7 @@ class ProfileController extends Controller
         
         $user->save();
 
-        return view('edit-profile')->with('message', $user->name)->with('user', $user);
+        return view('edit-profile')->with('user', $user);
     }
 
     /**
@@ -105,9 +95,6 @@ class ProfileController extends Controller
      */
     public function destroy(User $user)
     {
-        // $course->delete();
-        // return redirect()->action('courseController@index')
-        // ->with('success','Course Deleted')
-        // ->with('course',Course::orderBy('course_id','DESC')->get());
+        //
     }
 }
