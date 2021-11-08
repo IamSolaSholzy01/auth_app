@@ -78,7 +78,7 @@ class ProfileController extends Controller
         $request->validate([
             'name' => 'required',
             'username' => 'required',
-            'email' => 'required|unique:users',
+            'email' => 'required|unique:users,'.Auth::id(),
             'dob' => 'required',
             'gender' => 'required',
         ]);
