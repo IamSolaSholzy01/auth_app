@@ -13,6 +13,15 @@ form{
 
 @section('content')
 <section class="update">
+    <div class="error">
+        @if($errors)
+            @foreach ($errors as $error)
+                <div>
+                    {{ $error }}
+                </div>
+            @endforeach
+        @endif
+    </div>
 <div class="card p-5">
     <form action="{{ route('profile') }}" method="POST">
     {{ csrf_field() }}
