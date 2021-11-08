@@ -14,8 +14,8 @@ form{
 @section('content')
 <section class="update">
     <div class="error">
-        @if($errors)
-            @foreach ($errors as $error)
+        @if($errors->any())
+            @foreach ($errors->all() as $error)
                 <div>
                     {{ $error }}
                 </div>
