@@ -30,20 +30,20 @@ form{
         <div class="form-group">
             <div class="row">
                 <div class="col-md-6 p-1">
-                    <input name="name" type="text" value="{{ $user->name }}" class="form-control">
+                    <input name="name" type="text" value="{{ $user->name }}" class="form-control" required>
                 </div>
                 <div class="col-md-6 p-1">
-                    <input name="username" type="text" value="{{ $user->username }}" class="form-control">
+                    <input name="username" type="text" value="{{ $user->username }}" class="form-control" required>
                 </div>
             </div>
         </div>
         <div class="form-group">
             <div class="row">
                 <div class="col-md-6 p-1">
-                    <input name="email" type="email" value="{{ $user->email }}" class="form-control">
+                    <input name="email" type="email" value="{{ $user->email }}" class="form-control" required>
                 </div>
                 <div class="col-md-6 p-1">
-                    <select name="gender" id="gender" class="form-control">
+                    <select name="gender" id="gender" class="form-control" required>
                         <option hidden>Select Gender</option>
                         <option {{$user->gender == 'male' ? "selected=true" : "" }} value="male">Male</option>
                         <option {{$user->gender == 'female' ? "selected=true" : "" }} value="female">Female</option>
@@ -53,7 +53,7 @@ form{
         </div>
         <div class="form-group">
             <div class="row">
-                <input class="form-control" type="date" name="dob" id="dob" value="{{ $user->dob }}">
+                <input class="form-control" type="date" name="dob" id="dob" value="{{ $user->dob }}" required>
             </div>
         </div>
         <div class="form-group">
